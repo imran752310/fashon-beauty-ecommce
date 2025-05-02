@@ -4,6 +4,8 @@ import Hero from "./Components/Hero";
 import CollectionCard from "./Components/Collection";
 import BestSeller from "./Components/BestSeller";
 import { NewCollection } from "./Components/NewCollection";
+import ShopGlowing from "./Components/ShopGlowing";
+import Blogs from "./Components/Blogs";
 
 export default function Home() {
   return (
@@ -13,6 +15,8 @@ export default function Home() {
       <CollectionCard />
       <BestSeller />
       <NewCollection />
+      <ShopGlowing />
+      <Blogs />
     </div>
   );
 }
