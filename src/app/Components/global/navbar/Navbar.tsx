@@ -68,7 +68,7 @@ const Navbar = () => {
 
      
   <nav className="hidden lg:flex justify-center gap-10 text-[15px] font-medium py-3 sticky top-0 z-50 bg-white">
-  <Link href="#" className="hover:underline underline-offset-4 decoration-black transition duration-200">Home</Link>
+  <Link href="/" className="hover:underline underline-offset-4 decoration-black transition duration-200">Home</Link>
   <Link href="#" className="hover:underline underline-offset-4 decoration-black transition duration-200">Collection</Link>
   <Link href="#" className="hover:underline underline-offset-4 decoration-black transition duration-200">Shop</Link>
   <Link href="#" className="hover:underline underline-offset-4 decoration-black transition duration-200">Offer</Link>

@@ -29,7 +29,7 @@ const BestSeller = () => {
                 opacity-0 -translate-x-10 transition-all duration-500 
                 group-hover:opacity-100 group-hover:translate-x-0 z-10"
             >
-              <button className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow"><RiShoppingBag4Fill size={23}/></button>
+              <Link href={`Product/123`} className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow"><RiShoppingBag4Fill size={23}/></Link>
               <button className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow"><MdStarPurple500 size={23}/></button>
               <button className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow"><IoRepeat size={23}/></button>
             </div>
@@ -51,7 +51,7 @@ const BestSeller = () => {
               Bio-shroom Rejuvenating Serum
             </div>
             <div className="flex items-center justify-center space-x-1 text-sm text-gray-600 mb-5">
-              <div className="flex text-green-600">
+              <div className="flex text-[#4e7460]">
                 {Array(5)
                   .fill(0)
                   .map((_, i) => (
