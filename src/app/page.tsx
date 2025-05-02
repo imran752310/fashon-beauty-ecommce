@@ -1,16 +1,14 @@
-import Image from "next/image";
-import Navbar from "./Components/Navbar";
-import Hero from "./Components/Hero";
-import CollectionCard from "./Components/Collection";
-import BestSeller from "./Components/BestSeller";
-import { NewCollection } from "./Components/NewCollection";
-import ShopGlowing from "./Components/ShopGlowing";
-import Blogs from "./Components/Blogs";
+import BestSeller from "./Components/Home/BestSeller";
+import Blogs from "./Components/Home/Blogs";
+import CollectionCard from "./Components/Home/Collection";
+import Hero from "./Components/Home/Hero";
+import { NewCollection } from "./Components/Home/NewCollection";
+import ShopGlowing from "./Components/Home/ShopGlowing";
+
 
 export default function Home() {
   return (
     <div>
-      <Navbar />
       <Hero />
       <CollectionCard />
       <BestSeller />

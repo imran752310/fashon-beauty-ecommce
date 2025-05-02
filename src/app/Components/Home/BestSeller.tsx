@@ -4,14 +4,15 @@ import Image from "next/image";
 import { RiShoppingBag4Fill } from "react-icons/ri";
 import { MdStarPurple500 } from "react-icons/md";
 import { IoRepeat } from "react-icons/io5";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const BestSeller = () => {
   return (
     <div className="px-4 sm:px-6 lg:px-8 py-10">
       <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
         <h1 className="text-2xl sm:text-3xl font-semibold">Our Best Seller</h1>
-        <Link href="/" className="text-gray-900 cursor-pointer text-sm sm:text-base">
-          Shop All Product
+        <Link href="/" className="text-gray-900 cursor-pointer text-sm sm:text-base flex items-center space-x-2">
+        <span>  Shop All Product</span> <FaArrowRightLong />
         </Link>
       </div>
 
@@ -36,7 +37,7 @@ const BestSeller = () => {
             {/* Image Section */}
             <div className="bg-[#f9f9f9] rounded-md p-6">
               <Image
-                src="/images/product-01.jpg"
+                src="/images/product-08.jpg"
                 alt="Bio-shroom Rejuvenating Serum"
                 width={160}
                 height={260}

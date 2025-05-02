@@ -15,8 +15,8 @@ const Hero = () => {
         <span className="text-base sm:text-lg md:text-xl font-semibold text-black">
           Starting at $7.99
         </span>
-        <div>
-          <button className="w-36 sm:w-40 p-2 sm:p-3 bg-black text-white rounded font-semibold text-sm sm:text-md">
+        <div className="py-4">
+          <button className="w-36 sm:w-40 cursor-pointer p-2 sm:p-3 bg-black hover:bg-[#4e7460] text-white rounded font-semibold text-sm sm:text-md">
             Shop Now
           </button>
         </div>
