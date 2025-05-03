@@ -45,13 +45,15 @@ const Navbar = () => {
           </button>
 
           {/* Cart (desktop only) */}
-          <div className="hidden lg:flex items-center gap-2">
+         <Link href={'/cart/'} >
+         <div className="hidden lg:flex items-center gap-2">
             <b>$0.00</b>
             <button className="relative cursor-pointer">
               <span className="absolute -top-2 -right-2 bg-black text-white  hover:bg-[#4e7460] text-xs w-5 h-5 rounded-full flex items-center justify-center">0</span>
               <IoBagHandleOutline size={23}  className="hover:text-[#4e7460]" />
             </button>
           </div>
+          </Link>
         </div>
       </div>
 

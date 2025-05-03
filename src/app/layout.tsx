@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components/global/navbar/Navbar";
 import Footer from "@/Components/global/Footer";
-
+import { CartProvider } from "@/context/CartContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,7 +50,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Glowing Beauty – Skincare, Wellness & Self-Care Tips",
-    description: "Glow with the best skincare and beauty advice at Glowing Beauty.",
+    description:
+      "Glow with the best skincare and beauty advice at Glowing Beauty.",
     creator: "@yourTwitterHandle", // Optional
     images: ["https://your-domain.com/og-image.jpg"],
   },
@@ -68,11 +69,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-      cz-shortcut-listen="true"
+        cz-shortcut-listen="true"
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
-        {children}
+        <CartProvider>{children}</CartProvider>
         <Footer />
       </body>
     </html>

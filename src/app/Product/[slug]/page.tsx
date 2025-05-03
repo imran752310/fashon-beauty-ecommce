@@ -1,7 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
 import { FaShoppingCart, FaStar, FaTruck } from 'react-icons/fa';
-import BestSeller from '@/app/Components/Home/BestSeller';
 
  async function getData(slug: string, string: any) {
     const data = slug;
@@ -11,6 +10,10 @@ import BestSeller from '@/app/Components/Home/BestSeller';
  export default async function Products({Params} : { Params: string} ) {
 
 
+
+   function handleAdd(): void {
+     throw new Error('Function not implemented.');
+   }
 
   return (
     <div className="bg-white m-10 py-10">
@@ -58,7 +61,7 @@ import BestSeller from '@/app/Components/Home/BestSeller';
 
            
             <div className="flex gap-2.5">
-            <button className="flex gap-x-2 px-3 bg-black cursor-pointer hover:bg-[#4e7460] text-white p-3 rounded-md">
+            <button onClick={handleAdd} className="flex gap-x-2 px-3 bg-black cursor-pointer hover:bg-[#4e7460] text-white p-3 rounded-md">
                 <span>Add To Cart</span>
                 <FaShoppingCart  className="w-5 h-5" />
               </button>

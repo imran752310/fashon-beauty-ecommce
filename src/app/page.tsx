@@ -1,9 +1,10 @@
-import BestSeller from "@/Components/Home/BestSeller";
 import Blogs from "@/Components/Home/Blogs";
 import CollectionCard from "@/Components/Home/Collection";
+import BestSeller from "@/Components/Home/BestSeller";
 import Hero from "@/Components/Home/Hero";
 import { NewCollection } from "@/Components/Home/NewCollection";
 import ShopGlowing from "@/Components/Home/ShopGlowing";
+
 
 
 export default function Home() {
@@ -11,7 +12,11 @@ export default function Home() {
     <div>
       <Hero />
       <CollectionCard />
-      <BestSeller />
+      <BestSeller />;
+      {/* {dummyProducts.map((product) => {
+          // eslint-disable-next-line react/jsx-key
+          return <BestSeller key={product.id} product={product} />;
+        })} */}
       <NewCollection />
       <ShopGlowing />
       <Blogs />
