@@ -22,7 +22,7 @@
 //   onAddToCartClick,
 //   onBuyNowClick,
 // }) => {
-  
+
 //   return (
 //     <div className="px-4 sm:px-6 lg:px-8 py-10">
 //       <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
@@ -42,8 +42,8 @@
 //           >
 //             {/* Hover Buttons */}
 //             <div
-//               className="absolute inset-0 flex items-center justify-center space-x-2 
-//                 opacity-0 -translate-x-10 transition-all duration-500 
+//               className="absolute inset-0 flex items-center justify-center space-x-2
+//                 opacity-0 -translate-x-10 transition-all duration-500
 //                 group-hover:opacity-100 group-hover:translate-x-0 z-10"
 //             >
 //               <BuyingOptions product={product} />
@@ -92,43 +92,51 @@
 //   );
 // };
 
-
 // export default BestSeller;
 
+"use client";
 
-'use client';
-
-import { Product } from '@/context/CartContext';
+import { Product } from "@/context/CartContext";
 import Link from "next/link";
 import React, { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import { FaArrowRightLong } from "react-icons/fa6";
-import BuyingOptions from './AddButton';
+import BuyingOptions from "./AddButton";
 
-const BestSeller: FC = () => {
+interface Props {
+  product: Product;
+  onAddToCartClick?(): void;
+  onBuyNowClick?(): void;
+}
 
+// const ProductCard: FC<Props> = ({
+//   product,
+//   onAddToCartClick,
+//   onBuyNowClick,
+// }) => {
+
+const BestSeller: FC<Props> = ({ onAddToCartClick, onBuyNowClick }) => {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const res = await fetch('/api/products');
+      const res = await fetch("/api/products");
       const data = await res.json();
-      console.log(data)
+      console.log(data);
       setProducts(data);
     };
 
     fetchProducts();
   }, []);
 
-
-
-
-
   return (
     <div className="px-4 sm:px-6 lg:px-8 py-10">
       <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
         <h1 className="text-2xl sm:text-3xl font-semibold">Our Best Seller</h1>
-        <Link href="/" className="text-gray-900 cursor-pointer text-sm sm:text-base flex items-center space-x-2">
+        <Link
+          href="/"
+          className="text-gray-900 cursor-pointer text-sm sm:text-base flex items-center space-x-2"
+        >
           <span>Shop All Product</span> <FaArrowRightLong />
         </Link>
       </div>
@@ -146,7 +154,7 @@ const BestSeller: FC = () => {
                 opacity-0 -translate-x-10 transition-all duration-500 
                 group-hover:opacity-100 group-hover:translate-x-0 z-10"
             >
-              <BuyingOptions product={product} slug={products.slug} />
+              <BuyingOptions product={product} />
             </div>
 
             {/* Image Section */}
@@ -161,7 +169,9 @@ const BestSeller: FC = () => {
             </div>
 
             {/* Product Info */}
-            <div className="text-lg font-semibold text-gray-900">${product.salePrice}</div>
+            <div className="text-lg font-semibold text-gray-900">
+              ${product.salePrice}
+            </div>
             <div className="text-sm text-gray-700">{product.title}</div>
             <div className="flex items-center justify-center space-x-1 text-sm text-gray-600 mb-5">
               <div className="flex text-[#4e7460]">

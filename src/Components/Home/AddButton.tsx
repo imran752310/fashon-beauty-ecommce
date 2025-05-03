@@ -3,24 +3,17 @@
 import { RiShoppingBag4Fill } from "react-icons/ri";
 import { Product, useCart } from "../../context/CartContext";
 import { FC } from "react";
-import { MdStarPurple500 } from "react-icons/md";
 import { IoRepeat } from "react-icons/io5";
-import Link from "next/link";
 
 interface Props {
   product: Product;
-  slug: string;
+  // slug: string;
 }
 
-const BuyingOptions: FC<Props> = ({ product, slug }) => {
-  const { addToCart } = useCart();
+const BuyingOptions: FC<Props> = ({ product }) => {
+  const { updateCart  } = useCart();
   const onAddToCartClick = () => {
-    addToCart({
-      id: product.id,
-      name: product.title,
-      price: product.salePrice,
-      quantity: 1,
-    });
+    updateCart(product, 1);
   };
 
   return (
@@ -34,9 +27,9 @@ const BuyingOptions: FC<Props> = ({ product, slug }) => {
       <button   onClick={onAddToCartClick} className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow">
         <RiShoppingBag4Fill size={23} />
       </button>
-      <Link href={`/Product/${product.slug}`} className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow">
+      {/* <Link href={`/Product/${product.slug}`} className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow">
         <MdStarPurple500 size={23} />
-      </Link>
+      </Link> */}
       <button className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow">
         <IoRepeat size={23} />
       </button>
