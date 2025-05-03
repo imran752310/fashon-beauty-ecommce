@@ -13,11 +13,11 @@ import BestSeller from '@/app/Components/Home/BestSeller';
 
 
   return (
-    <div className="bg-white m-10 py-20">
+    <div className="bg-white m-10 py-10">
       <div className="mx-auto max-w-screen-xl px-4 md:px-8">
         <div className="grid gap-8 md:grid-cols-2">
 
-        <Image src={'/images/product-06.jpg'} alt="" width={400} height={600} />
+        <Image src={'/images/product-06.jpg'} alt="" width={400} height={400} />
 
           <div className="md:py-8">
             <div className="mb-2 md:mb-3">
@@ -94,7 +94,6 @@ import BestSeller from '@/app/Components/Home/BestSeller';
           </div>
         </div>
         <div>
-            <BestSeller />
         </div>
       </div>
     </div>
