@@ -146,7 +146,7 @@ const BestSeller: FC = () => {
                 opacity-0 -translate-x-10 transition-all duration-500 
                 group-hover:opacity-100 group-hover:translate-x-0 z-10"
             >
-              <BuyingOptions product={product} />
+              <BuyingOptions product={product} slug={products.slug} />
             </div>
 
             {/* Image Section */}
