@@ -1,8 +1,7 @@
 // src/components/CartItem.tsx
-"use client"
 import { useCart } from '../../context/CartContext';
 
- const CartItem = ({ id, name, price, quantity }: { 
+export const CartItem = ({ id, name, price, quantity }: { 
   id: string; 
   name: string; 
   price: number; 
@@ -34,5 +33,3 @@ import { useCart } from '../../context/CartContext';
     </div>
   );
 };
-
-export default CartItem;

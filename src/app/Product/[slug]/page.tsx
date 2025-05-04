@@ -2,18 +2,16 @@ import React from 'react'
 import Image from 'next/image';
 import { FaShoppingCart, FaStar, FaTruck } from 'react-icons/fa';
 
- async function getData(slug: string, string: any) {
+ async function getData(slug: string) {
     const data = slug;
+    console.log(data)
+
     return data
  } 
  
  export default async function Products({Params} : { Params: string} ) {
 
-
-
-   function handleAdd(): void {
-     throw new Error('Function not implemented.');
-   }
+  console.log(Params)
 
   return (
     <div className="bg-white m-10 py-10">
@@ -61,7 +59,7 @@ import { FaShoppingCart, FaStar, FaTruck } from 'react-icons/fa';
 
            
             <div className="flex gap-2.5">
-            <button onClick={handleAdd} className="flex gap-x-2 px-3 bg-black cursor-pointer hover:bg-[#4e7460] text-white p-3 rounded-md">
+            <button  className="flex gap-x-2 px-3 bg-black cursor-pointer hover:bg-[#4e7460] text-white p-3 rounded-md">
                 <span>Add To Cart</span>
                 <FaShoppingCart  className="w-5 h-5" />
               </button>
@@ -70,25 +68,7 @@ import { FaShoppingCart, FaStar, FaTruck } from 'react-icons/fa';
                 <span>Checkout</span>
 
               </button>
-              {/* <AddToBag
-                currency="USD"
-                description={data.description}
-                image={data.images[0]}
-                name={data.name}
-                price={data.price}
-                key={data._id}
-                price_id={data.price_id}
-              />
-
-              <CheckoutNow
-                currency="USD"
-                description={data.description}
-                image={data.images[0]}
-                name={data.name}
-                price={data.price}
-                key={data._id}
-                price_id={data.price_id}
-              /> */}
+           
             </div>
 
             <p className="mt-12 text-base text-gray-500 tracking-wide">

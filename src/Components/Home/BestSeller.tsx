@@ -96,26 +96,18 @@
 
 "use client";
 
-import { Product } from "@/context/CartContext";
 import Link from "next/link";
 import React, { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import { FaArrowRightLong } from "react-icons/fa6";
-import BuyingOptions from "./AddButton";
+import { RiShoppingBag4Fill } from "react-icons/ri";
+import { MdStarPurple500 } from "react-icons/md";
+import { IoRepeat } from "react-icons/io5";
 
-interface Props {
-  product: Product;
-  onAddToCartClick?(): void;
-  onBuyNowClick?(): void;
-}
 
-// const ProductCard: FC<Props> = ({
-//   product,
-//   onAddToCartClick,
-//   onBuyNowClick,
-// }) => {
 
-const BestSeller: FC<Props> = ({ onAddToCartClick, onBuyNowClick }) => {
+
+const BestSeller: FC<Props> = ({}) => {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
@@ -154,7 +146,15 @@ const BestSeller: FC<Props> = ({ onAddToCartClick, onBuyNowClick }) => {
                 opacity-0 -translate-x-10 transition-all duration-500 
                 group-hover:opacity-100 group-hover:translate-x-0 z-10"
             >
-              <BuyingOptions product={product} />
+            <button    className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow">
+        <RiShoppingBag4Fill size={23} />
+      </button>
+      <Link href={`/Product/${product.slug}`} className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow">
+        <MdStarPurple500 size={23} />
+      </Link>
+      <button className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow">
+        <IoRepeat size={23} />
+      </button>
             </div>
 
             {/* Image Section */}
