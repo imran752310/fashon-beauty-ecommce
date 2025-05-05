@@ -2,7 +2,8 @@ import Link from "next/link";
 
 export default function CollectionCard() {
   return (
-    <div className="px-5 py-15">
+    <div className="px-5 py-15" data-aos="fade-up"
+    data-aos-anchor-placement="top-center">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-7">
         {/* card 2 */}
         <div className="overflow-hidden">

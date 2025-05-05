@@ -47,7 +47,8 @@ import React from "react";
 
 export const NewCollection = () => {
   return (
-    <div className="my-10 px-4">
+    <div className="my-10 px-4" data-aos="fade-up"
+    data-aos-anchor-placement="top-center">
       <div className="flex flex-col md:flex-row gap-6">
         {/* Left Banner */}
         <div className="w-full md:w-2/3 overflow-hidden">

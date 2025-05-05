@@ -3,7 +3,8 @@ import React from "react";
 
 const Blogs = () => {
   return (
-    <div className="px-5 py-15">
+    <div className="px-5 py-15" data-aos="fade-up"
+    data-aos-anchor-placement="top-center">
       <div className="mx-auto text-center text-5xl m-10">
         <h1>More to Discover</h1>
       </div>

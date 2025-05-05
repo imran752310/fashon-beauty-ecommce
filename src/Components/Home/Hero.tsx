@@ -2,7 +2,10 @@ import React from "react";
 
 const Hero = () => {
   return (
-   <div className="mx-5">
+    
+   <div className="mx-5" data-aos="fade-up"
+   data-aos-anchor-placement="top-center">
+    
      <div className="bg-[url('/images/hero-banner-1.jpg')] bg-cover bg-center w-full h-[550px] md:h-[600px] lg:h-[600px]">
       <div className="w-[90%] md:w-[80%] h-full mx-auto flex flex-col justify-center space-y-4 px-4 md:px-0">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-Urbanist leading-tight text-black">

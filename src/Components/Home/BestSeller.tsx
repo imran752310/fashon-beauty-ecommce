@@ -1,5 +1,3 @@
-
-
 "use client";
 import { useCart } from "@/context/CartContext"; // ✅ import useCart
 import { useFavorite } from "@/context/FavoriteContext"; // ✅
@@ -7,13 +5,10 @@ import { useFavorite } from "@/context/FavoriteContext"; // ✅
 import Link from "next/link";
 import React, { FC, useEffect, useState } from "react";
 import Image from "next/image";
-import { FaArrowRightLong } from "react-icons/fa6";
+import { FaArrowRightLong, FaRegEye, FaRegHeart } from "react-icons/fa6";
 import { RiShoppingBag4Fill } from "react-icons/ri";
-import { MdStarPurple500 } from "react-icons/md";
-import { IoRepeat } from "react-icons/io5";
 
 import { dummyProducts } from "@/constant/data";
-
 
 const BestSeller = () => {
   const products = dummyProducts;
@@ -21,7 +16,11 @@ const BestSeller = () => {
   const { addToFavorite } = useFavorite();
 
   return (
-    <div className="px-4 sm:px-6 lg:px-8 py-10">
+    <div
+      className="px-4 sm:px-6 lg:px-8 py-10"
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-center"
+    >
       <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
         <h1 className="text-2xl sm:text-3xl font-semibold">Our Best Seller</h1>
         <Link
@@ -45,24 +44,24 @@ const BestSeller = () => {
                 opacity-0 -translate-x-10 transition-all duration-500 
                 group-hover:opacity-100 group-hover:translate-x-0 z-10"
             >
-            {/* <button    className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow">
-        <RiShoppingBag4Fill size={23} />
-      </button> */}
-       <button
-      onClick={() => addToCart(product)} // ✅ Add to Cart button
-      className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow"
-    >
-      <RiShoppingBag4Fill size={23} />
-    </button>
-      <button   onClick={(e) => {
-    e.preventDefault();
-    addToFavorite(product); // ✅
-  }} className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow">
-        <MdStarPurple500 size={23} />
-      </button>
-      <button className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow">
-        <IoRepeat size={23} />
-      </button>
+              <button
+                onClick={() => addToCart(product)} // ✅ Add to Cart button
+                className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow"
+              >
+                <RiShoppingBag4Fill size={23} />
+              </button>
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  addToFavorite(product); // ✅
+                }}
+                className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow"
+              >
+                <FaRegHeart size={23} />
+              </button>
+              <Link href={`/Product/${product.slug}`} className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow">
+                <FaRegEye size={23} />
+              </Link>
             </div>
 
             {/* Image Section */}

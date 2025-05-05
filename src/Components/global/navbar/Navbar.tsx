@@ -14,6 +14,7 @@ import {
 import { LuAlignLeft } from "react-icons/lu";
 import TopBar from "./TopBar";
 import { useCart } from "@/context/CartContext"; // ✅ Import the hook
+import { FaRegHeart } from "react-icons/fa6";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -72,7 +73,7 @@ const Navbar = () => {
                 {favoriteItems.length}
               </span>
             )}
-            <IoStarOutline size={23} className="hover:text-[#4e7460]" />
+          <FaRegHeart   size={23} className="hover:text-[#4e7460]" />
           </button>
             </Link>
 
