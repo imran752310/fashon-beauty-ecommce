@@ -1,6 +1,8 @@
 
 
 "use client";
+import { useCart } from "@/context/CartContext"; // ✅ import useCart
+import { useFavorite } from "@/context/FavoriteContext"; // ✅
 
 import Link from "next/link";
 import React, { FC, useEffect, useState } from "react";
@@ -15,7 +17,8 @@ import { dummyProducts } from "@/constant/data";
 
 const BestSeller = () => {
   const products = dummyProducts;
-
+  const { addToCart } = useCart(); // ✅ use the cart
+  const { addToFavorite } = useFavorite();
 
   return (
     <div className="px-4 sm:px-6 lg:px-8 py-10">
@@ -42,12 +45,21 @@ const BestSeller = () => {
                 opacity-0 -translate-x-10 transition-all duration-500 
                 group-hover:opacity-100 group-hover:translate-x-0 z-10"
             >
-            <button    className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow">
+            {/* <button    className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow">
         <RiShoppingBag4Fill size={23} />
-      </button>
-      <Link href={`/Product/${product.slug}`} className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow">
+      </button> */}
+       <button
+      onClick={() => addToCart(product)} // ✅ Add to Cart button
+      className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow"
+    >
+      <RiShoppingBag4Fill size={23} />
+    </button>
+      <button   onClick={(e) => {
+    e.preventDefault();
+    addToFavorite(product); // ✅
+  }} className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow">
         <MdStarPurple500 size={23} />
-      </Link>
+      </button>
       <button className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow">
         <IoRepeat size={23} />
       </button>

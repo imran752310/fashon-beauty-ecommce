@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/Components/global/navbar/Navbar";
 import Footer from "@/Components/global/Footer";
 import { CartProvider } from "@/context/CartContext";
+import { FavoriteProvider } from "@/context/FavoriteContext";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -72,8 +73,10 @@ export default function RootLayout({
         cz-shortcut-listen="true"
         // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >   <CartProvider>
+          <FavoriteProvider>
         <Navbar />
-       {children}
+      {children}
+      </FavoriteProvider>
         <Footer />
         </CartProvider>
       </body>
