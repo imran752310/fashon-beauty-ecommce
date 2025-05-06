@@ -1,19 +1,18 @@
 "use client";
 import { useCart } from "@/context/CartContext"; // ✅ import useCart
 import { useFavorite } from "@/context/FavoriteContext"; // ✅
-
 import Link from "next/link";
 import React, { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import { FaArrowRightLong, FaRegEye, FaRegHeart } from "react-icons/fa6";
 import { RiShoppingBag4Fill } from "react-icons/ri";
-
 import { dummyProducts } from "@/constant/data";
 
 const BestSeller = () => {
+  
   const products = dummyProducts;
   const { addToCart } = useCart(); // ✅ use the cart
-  const { addToFavorite } = useFavorite();
+  const { addToFavorite } = useFavorite();  
 
   return (
     <div

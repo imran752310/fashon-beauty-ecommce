@@ -35,18 +35,18 @@ export default function ProductClient({ product }: { product: any }) {
             <div className="flex gap-2.5 mt-4">
               <button
                 onClick={() => addToCart(product)}
-                className="flex gap-x-2 px-3 bg-black hover:bg-[#4e7460] text-white p-3 rounded-md"
+                className="flex gap-x-2 px-3 bg-black hover:bg-[#4e7460] cursor-pointer text-white p-3 rounded-full"
               >
                 <span>Add To Cart</span>
                 <FaShoppingCart className="w-5 h-5" />
               </button>
-              <Link href={'/checkout/'} className="flex gap-x-2 px-3 border hover:bg-[#4e7460] hover:text-white p-3 rounded-md">
+              <Link href={'/checkout/'} className="flex gap-x-2 px-3 border hover:bg-[#4e7460] hover:text-white p-3 rounded-full">
                 <span>Checkout</span>
               </Link>
             </div>
 
             <p className="mt-12 text-base text-gray-500">
-              Lorem ipsum product description...
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, saepe sit delectus cupiditate beatae consequatur at ratione deleniti eveniet ex a? Natus modi aliquam pariatur amet repellat nihil neque? Quo.
             </p>
           </div>
         </div>

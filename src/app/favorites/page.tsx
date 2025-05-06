@@ -39,7 +39,7 @@ const FavoritesPage = () => {
               </div>
               <button
                 onClick={() => removeFromFavorite(product.id)}
-                className="mt-auto bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition-all"
+                className="mt-auto bg-red-500 text-white px-4 py-2 cursor-pointer rounded hover:bg-red-600 transition-all"
               >
                 Remove
               </button>
