@@ -66,16 +66,16 @@ const Navbar = () => {
           {/* Wishlist (desktop only) */}
 
           <Link href={"/favorites/"}>
-          <button className="hidden lg:block cursor-pointer relative ">
-            {favoriteItems.length > 0 && (
-              <span className="absolute -top-2 -right-2 bg-black  text-white hover:bg-[#4e7460] text-xs w-5 h-5 rounded-full flex items-center justify-center">
-                {" "}
-                {favoriteItems.length}
-              </span>
-            )}
-          <FaRegHeart   size={23} className="hover:text-[#4e7460]" />
-          </button>
-            </Link>
+            <button className="hidden lg:block cursor-pointer relative ">
+              {favoriteItems.length > 0 && (
+                <span className="absolute -top-2 -right-2 bg-black  text-white hover:bg-[#4e7460] text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                  {" "}
+                  {favoriteItems.length}
+                </span>
+              )}
+              <FaRegHeart size={23} className="hover:text-[#4e7460]" />
+            </button>
+          </Link>
 
           {/* Cart (desktop only) */}
           <Link href={"/cart/"}>
@@ -132,7 +132,7 @@ const Navbar = () => {
           Collection
         </Link>
         <Link
-          href="#"
+          href="/shop/"
           className="hover:underline underline-offset-4 decoration-black transition duration-200"
         >
           Shop
