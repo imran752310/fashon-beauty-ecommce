@@ -1,12 +1,10 @@
 "use client";
 import { useCart } from "@/context/CartContext";
-import { useFavorite } from "@/context/FavoriteContext";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 const CheckoutPage = () => {
   const { cartItems, removeFromCart } = useCart();
-  const { favoriteItems } = useFavorite();
   const [address, setAddress] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("");
   const [loading, setLoading] = useState(false);
@@ -34,14 +32,14 @@ const CheckoutPage = () => {
   }
 
   return (
-    <div className="p-6 max-w-5xl mx-auto">
+    <div className="p-6 max-w-6xl mx-auto my-16">
       <h1 className="text-2xl font-bold mb-6">Checkout</h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         {/* Cart Items */}
         <div>
           <h2 className="text-xl font-semibold mb-4">Your Cart</h2>
           {cartItems.map((product) => (
-            <div key={product.id} className="flex justify-between mb-4">
+            <div key={product.id} className="flex justify-between gap-5 mb-4">
               <div>
                 <p>{product.title}</p>
                 <p className="text-sm text-gray-500">${product.salePrice}</p>

@@ -17,9 +17,9 @@ const CartPage = () => {
       <h1 className="text-2xl font-semibold mb-6">Your Shopping Cart</h1>
 
       {cartItems.length === 0 ? (
-        <div className="text-center">
+        <div className="text-center my-10">
           <p className="text-gray-600">Your cart is empty.</p>
-          <Link href="/" className="text-blue-500 hover:underline">
+          <Link href="/shop" className="text-blue-500 hover:underline">
             Continue Shopping
           </Link>
         </div>
@@ -67,6 +67,14 @@ const CartPage = () => {
             >
               Clear Cart
             </button>
+          </div>
+          <div className="my-5">
+             <Link href={'/checkout'}
+                 
+                  className="bg-blue-500 text-white py-2 px-4 w-full rounded hover:bg-blue-600 cursor-pointer  "
+                >
+                  Checkout
+                </Link>
           </div>
         </>
       )}
