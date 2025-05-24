@@ -1,4 +1,4 @@
-"use client"
+
 import Blogs from "@/Components/Home/Blogs";
 import CollectionCard from "@/Components/Home/Collection";
 import BestSeller from "@/Components/Home/BestSeller";
@@ -6,24 +6,19 @@ import Hero from "@/Components/Home/Hero";
 import { NewCollection } from "@/Components/Home/NewCollection";
 import ShopGlowing from "@/Components/Home/ShopGlowing";
 
-import AOS from 'aos';
-import 'aos/dist/aos.css'; 
-import { useEffect } from "react";
+import { getCategories } from "@/sanity/lib/getCategories";
 
 
-export default function Home() {
+export default async function Home() {
 
-  useEffect(() => {
-    AOS.init({
-         duration: 800,
-         once: false,
-       })
- }, [])
+   const categories   = await getCategories();
+
+ 
 
   return (
     <div>
       <Hero />
-      <CollectionCard />
+    <CollectionCard categories={categories} />
       <BestSeller />;
       <NewCollection />
       <ShopGlowing />

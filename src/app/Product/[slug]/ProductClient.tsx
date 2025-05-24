@@ -17,10 +17,10 @@ export default function ProductClient({ product }: { product: any }) {
           <div className="md:py-8">
             <h2 className="text-2xl font-bold text-gray-800">{product.title}</h2>
             <div className="mb-6 flex items-center gap-3">
-              <button className="flex gap-x-2 px-3 bg-[#4e7460] text-white p-3 rounded-full">
+              <div className="flex gap-x-2 px-3 bg-[#4e7460] text-white p-3 rounded-full">
                 <span>4.2</span>
                 <FaStar className="w-5 h-5" />
-              </button>
+              </div>
               <span className="text-sm text-gray-500">56 Ratings</span>
             </div>
 

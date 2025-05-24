@@ -63,7 +63,7 @@ const BestSeller = () => {
               </Link>
             </div>
 
-            {/* Image Section */}
+            {/* Image Section */}z
             <div className="bg-[#f9f9f9]  p-6">
               <Image
                 src={product.thumbnail}
