@@ -58,7 +58,7 @@ const BestSeller = () => {
               >
                 <FaRegHeart size={23} />
               </button>
-              <Link href={`/Product/${product.slug}`} className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow">
+              <Link href={`/product/${product.slug}`} className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow">
                 <FaRegEye size={23} />
               </Link>
             </div>
