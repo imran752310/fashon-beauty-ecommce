@@ -2,7 +2,7 @@
 import { useCart } from "@/context/CartContext";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-
+import Image from "next/image";
 const CheckoutPage = () => {
   const { cartItems, removeFromCart } = useCart();
   const [address, setAddress] = useState("");
@@ -40,10 +40,20 @@ const CheckoutPage = () => {
           <h2 className="text-xl font-semibold mb-4">Your Cart</h2>
           {cartItems.map((product) => (
             <div key={product.id} className="flex justify-between gap-5 mb-4">
+              <div className="flex items-center gap-2">
+                <Image
+                              src={product.thumbnail}
+                              alt={product.title}
+                              width={50}
+                              height={50}
+                              className="object-cover mx-auto"
+                            />
               <div>
                 <p>{product.title}</p>
                 <p className="text-sm text-gray-500">${product.salePrice}</p>
               </div>
+              </div>
+               
               <button
                 onClick={() => removeFromCart(product.id)}
                 className="text-red-500"
