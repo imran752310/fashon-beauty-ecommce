@@ -1,16 +1,28 @@
-"use client";
+"use client"
 import { useCart } from "@/context/CartContext"; // ✅ import useCart
-import { useFavorite } from "@/context/FavoriteContext"; // ✅
+import { Product, useFavorite } from "@/context/FavoriteContext"; // ✅
 import Link from "next/link";
 import React, { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import { FaArrowRightLong, FaRegEye, FaRegHeart } from "react-icons/fa6";
 import { RiShoppingBag4Fill } from "react-icons/ri";
-import { dummyProducts } from "@/constant/data";
+// import { dummyProducts } from "@/constant/data";
 
-const BestSeller = () => {
+ interface FullProduct {
+  _id: string;
+  images: string[]; // Assuming images are stored as an array of URLs
+  price: number;
+  slug: string;
+  categoryName: string;
+  name: string;
+  description: string;
+  price_id: string;
+}
+
+const BestSeller = ({product}:any) => {
+  console.log(product)
   
-  const products = dummyProducts;
+  // const products = product;
   const { addToCart } = useCart(); // ✅ use the cart
   const { addToFavorite } = useFavorite();  
 
@@ -32,7 +44,7 @@ const BestSeller = () => {
 
       {/* Products Grid */}
       <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 2xl:grid-cols-6">
-        {products.map((product) => (
+        {product.map((product: Product) => (
           <div
             key={product.id}
             className="bg-white rounded-md text-center space-y-3 relative group overflow-hidden cursor-pointer transition duration-300"
@@ -66,8 +78,8 @@ const BestSeller = () => {
             {/* Image Section */}z
             <div className="bg-[#f9f9f9]  p-6">
               <Image
-                src={product.thumbnail}
-                alt={product.title}
+                src={product.image}
+                alt={product.name}
                 width={160}
                 height={260}
                 className="mx-auto"
@@ -78,7 +90,7 @@ const BestSeller = () => {
             <div className="text-lg font-semibold text-gray-900">
               ${product.salePrice}
             </div>
-            <div className="text-sm text-gray-700">{product.title}</div>
+            <div className="text-sm text-gray-700">{product.Description}</div>
             <div className="flex items-center justify-center space-x-1 text-sm text-gray-600 mb-5">
               <div className="flex text-[#4e7460]">
                 {Array(5)

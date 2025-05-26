@@ -1,16 +1,19 @@
-// lib/getProducts.ts or sanity/queries/getProducts.ts
-import { client } from "../../sanity/lib/client";
+import { client } from "./client";
+import { urlFor } from "./image";
 
 export async function getProducts() {
   const query = `*[_type == "product"]{
     _id,
-    name,
-    price,
-    price_id,
-    description,
-    "slug": slug.current,
-    "images": image[].asset->url,
+    title,
+    salePrice,
+    "thumbnail": thumbnail.asset->,
+    "slug": slug.current
   }`;
 
-  return await client.fetch(query);
+  const products = await client.fetch(query);
+
+  return products.map((product: any) => ({
+    ...product,
+    thumbnail: urlFor(product.thumbnail), // ✅ this makes it a real image URL
+  }));
 }

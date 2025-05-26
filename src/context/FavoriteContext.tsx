@@ -3,6 +3,9 @@ import React, { createContext, useContext, useState, useEffect, ReactNode } from
 
 // 🔁 Product type (customize if needed)
 export interface Product {
+  Description: ReactI18NextChildren | Iterable<ReactI18NextChildren>;
+  name: string;
+  image: string | StaticImport;
   id: string;
   title: string;
   salePrice: number;
