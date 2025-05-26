@@ -3,12 +3,13 @@ import { urlFor } from "./image";
 
 export async function getProducts() {
   const query = `*[_type == "product"]{
-    _id,
-    title,
-    salePrice,
-    "thumbnail": thumbnail.asset->,
-    "slug": slug.current
-  }`;
+      name,
+        image,
+        description,
+        price,
+        price_id,
+        category
+      }`;
 
   const products = await client.fetch(query);
 

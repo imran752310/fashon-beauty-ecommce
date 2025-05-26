@@ -6,23 +6,14 @@ import React, { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import { FaArrowRightLong, FaRegEye, FaRegHeart } from "react-icons/fa6";
 import { RiShoppingBag4Fill } from "react-icons/ri";
-// import { dummyProducts } from "@/constant/data";
+import { dummyProducts } from "@/constant/data";
 
- interface FullProduct {
-  _id: string;
-  images: string[]; // Assuming images are stored as an array of URLs
-  price: number;
-  slug: string;
-  categoryName: string;
-  name: string;
-  description: string;
-  price_id: string;
-}
 
-const BestSeller = ({product}:any) => {
-  console.log(product)
+
+const BestSeller = () => {
   
-  // const products = product;
+
+
   const { addToCart } = useCart(); // ✅ use the cart
   const { addToFavorite } = useFavorite();  
 
@@ -44,7 +35,7 @@ const BestSeller = ({product}:any) => {
 
       {/* Products Grid */}
       <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 2xl:grid-cols-6">
-        {product.map((product: Product) => (
+        {dummyProducts.map((product) => (
           <div
             key={product.id}
             className="bg-white rounded-md text-center space-y-3 relative group overflow-hidden cursor-pointer transition duration-300"
@@ -75,11 +66,11 @@ const BestSeller = ({product}:any) => {
               </Link>
             </div>
 
-            {/* Image Section */}z
+            {/* Image Section */}
             <div className="bg-[#f9f9f9]  p-6">
               <Image
-                src={product.image}
-                alt={product.name}
+                src={product.thumbnail}
+                alt={product.title}
                 width={160}
                 height={260}
                 className="mx-auto"

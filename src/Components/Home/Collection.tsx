@@ -31,7 +31,7 @@ export default function CollectionCard({ categories }: Props) {
                   <h2 className="text-3xl font-bold mb-4">{cat.name}</h2>
                   <p className="text-lg mb-8">{cat.text}</p>
                 </div>
-                <Link href={`/category/${cat._id}`}>
+                <Link href={`/category/${cat.name}`}>
                   <span className="text-base font-semibold hover:opacity-75 cursor-pointer">
                     Discover Now →
                   </span>
