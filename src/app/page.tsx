@@ -1,4 +1,5 @@
 import BestSeller from "@/Components/Home/BestSeller";
+import BestSellerServer from "@/Components/Home/Bestselleserver";
 import Blogs from "@/Components/Home/Blogs";
 import CollectionCard from "@/Components/Home/Collection";
 import Hero from "@/Components/Home/Hero";
@@ -20,7 +21,8 @@ export default async function Home() {
     <div>
       <Hero />
       <CollectionCard categories={categories} />
-      <BestSeller products={products} />
+      {/* <BestSeller products={[]} /> */}
+      <BestSellerServer />
       <NewCollection />
       <ShopGlowing />
       <Blogs />
