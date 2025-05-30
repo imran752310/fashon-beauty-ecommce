@@ -4,7 +4,7 @@ import Image from "next/image";
 import { client } from "@/sanity/lib/client";
 
 
-export const revalidate = 80;
+export const revalidate = 0;
 
 
 async function getData(cateogry: string) {

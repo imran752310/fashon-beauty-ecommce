@@ -1,10 +1,12 @@
 export interface SimplifiedProduct {
+  urlFor: string | StaticImport;
   _id: string;
   imageUrl: string;
   price: number;
   slug: string;
   categoryName: string;
   name: string;
+  description: string;
 }
 
 export interface FullProduct {
