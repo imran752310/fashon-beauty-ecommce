@@ -8,7 +8,7 @@ const CartPage = () => {
   
 
   const totalPrice = cartItems.reduce(
-    (total, item) => total + item.salePrice * item.quantity,
+    (total, item) => total + item.price * item.quantity,
     0
   );
 
@@ -33,16 +33,16 @@ const CartPage = () => {
               >
                 <div className="flex items-center gap-4">
                   <Image
-                    src={item.thumbnail}
-                    alt={item.title}
+                    src={item.imageUrl}
+                    alt={item.name}
                     width={80}
                     height={80}
                     className="rounded"
                   />
                   <div>
-                    <h2 className="font-medium">{item.title}</h2>
+                    <h2 className="font-medium">{item.name}</h2>
                     <p className="text-gray-600">
-                      ${item.salePrice} x {item.quantity}
+                      ${item.price} x {item.quantity}
                     </p>
                   </div>
                 </div>

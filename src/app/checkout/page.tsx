@@ -11,7 +11,7 @@ const CheckoutPage = () => {
   const router = useRouter();
 
   // Calculate total
-  const total = cartItems.reduce((acc, item) => acc + item.salePrice, 0);
+  const total = cartItems.reduce((acc, item) => acc + item.price, 0);
 
   const handleCheckout = () => {
     setLoading(true);
@@ -42,15 +42,15 @@ const CheckoutPage = () => {
             <div key={product.id} className="flex justify-between gap-5 mb-4">
               <div className="flex items-center gap-2">
                 <Image
-                              src={product.thumbnail}
+                              src={product.imageUrl}
                               alt={product.title}
                               width={50}
                               height={50}
                               className="object-cover mx-auto"
                             />
               <div>
-                <p>{product.title}</p>
-                <p className="text-sm text-gray-500">${product.salePrice}</p>
+                <p>{product.name}</p>
+                <p className="text-sm text-gray-500">${product.price}</p>
               </div>
               </div>
                

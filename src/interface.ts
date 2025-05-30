@@ -1,5 +1,6 @@
 export interface SimplifiedProduct {
-  urlFor: string | StaticImport;
+  title: string;
+  urlFor: string ;
   _id: string;
   imageUrl: string;
   price: number;
@@ -10,6 +11,8 @@ export interface SimplifiedProduct {
 }
 
 export interface FullProduct {
+  title: string;
+  imageUrl: string ;
   _id: string;
   images: string[]; // Assuming images are stored as an array of URLs
   price: number;

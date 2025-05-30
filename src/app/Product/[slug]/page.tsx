@@ -14,7 +14,7 @@ async function getData(slug: string) {
       price,
       name,
       description,
-      "images": image[].asset->url, // Fetch all images
+     "imageUrl":image[0].asset->url,
       "slug": slug.current,
       "categoryName": category->name, 
       price_id,
@@ -29,11 +29,11 @@ export default async function ProductPage({
 }: {
   params: { slug: string };
 }) {
-  const data: FullProduct = await getData(params.slug);
+  const product: FullProduct = await getData(params.slug);
 
-  function addToCart(product: { type: "document"; name: "product"; } & Omit<DocumentDefinition, "preview"> & { preview?: PreviewConfig<Record<string, string>, Record<never, any>> | undefined; }): void {
-    throw new Error('Function not implemented.');
-  }
+  // function addToCart(product: { type: "document"; name: "product"; } & Omit<DocumentDefinition, "preview"> & { preview?: PreviewConfig<Record<string, string>, Record<never, any>> | undefined; }): void {
+  //   throw new Error('Function not implemented.');
+  // }
 
   return (
     <div className="bg-white m-10 py-10">
@@ -53,7 +53,8 @@ export default async function ProductPage({
             <div className="mb-4">
               <div className="flex items-end gap-2">
                 <span className="text-xl font-bold text-gray-800">${product.price}</span>
-                <span className="mb-0.5 text-red-500 line-through">${product.price}</span>
+                <span className="mb-0.5 text-red-500 line-through">${
+product.price}</span>
               </div>
               <span className="text-sm text-gray-500">Incl. VAT + Shipping</span>
             </div>

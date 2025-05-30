@@ -6,6 +6,7 @@ import { FaArrowRightLong, FaRegEye, FaRegHeart } from "react-icons/fa6";
 import { RiShoppingBag4Fill } from "react-icons/ri";
 import { SimplifiedProduct } from "@/interface";
 import { client } from "@/sanity/lib/client";
+import AddToCartButton from "./AddToCard";
 
 
 export const revalidate = 0;
@@ -23,7 +24,7 @@ async function getData() {
       }`;
 
   const products = await client.fetch(query);
-  console.log(products)
+
   return products;
 }
 
@@ -51,12 +52,24 @@ const products: SimplifiedProduct[] = await getData();
               >
                 <RiShoppingBag4Fill size={23} />
               </div>
+              <AddToCartButton product={
+                {
+                  id:product._id,
+                  title: product.title,
+                 slug: product.slug,
+                 description: product.description,
+                 imageUrl: product.imageUrl,
+                 price: product.price,
+                name: product.name
+                }
+              } />
               <div
                 // onClick={() => addToFavorite(product)}
                 className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow"
               >
                 <FaRegHeart size={23} />
               </div>
+              
               <Link
                 href={`/product/${product.slug}`}
                 className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow"
@@ -70,7 +83,7 @@ const products: SimplifiedProduct[] = await getData();
             </div>
 
             <div className="text-lg font-semibold text-gray-900">${product.price}</div>
-            <div className="text-sm text-gray-700">{product.description}</div>
+            <div className="text-sm text-gray-700">{product.name}</div>
             <div className="flex items-center justify-center space-x-1 text-sm text-gray-600 mb-5">
               <div className="flex text-[#4e7460]">
                 {Array(5)

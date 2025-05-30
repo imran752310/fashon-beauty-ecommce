@@ -6,10 +6,10 @@ export interface Product {
   id: string;
   title: string;
   slug: string;
-  mrp: number;
-  salePrice: number;
-  percentOff: number;
-  thumbnail: string;
+  price: number;
+  description: string;
+  imageUrl: string;
+  name: string
 }
 
 // Cart Item type (can extend Product and add quantity)

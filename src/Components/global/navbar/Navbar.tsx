@@ -21,7 +21,7 @@ const Navbar = () => {
   const { cartItems } = useCart(); // ✅ Get cart items from context
   const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0); // ✅
   const totalPrice = cartItems.reduce(
-    (total, item) => total + item.salePrice * item.quantity,
+    (total, item) => total + item.price * item.quantity,
     0
   );
   const { favoriteItems } = useFavorite();
