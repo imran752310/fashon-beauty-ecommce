@@ -19,8 +19,6 @@ async function getData(name: string) {
       }`;
 
   const data = await client.fetch(query);
-
-  console.log(data);
   return data;
 }
 

@@ -28,7 +28,7 @@ const FavoritesPage = () => {
             >
               <Image
                 src={product.imageUrl}
-                alt={product.title}
+                alt={product.name}
                 width={250}
                 height={250}
                 className="w-full object-cover mx-auto"
