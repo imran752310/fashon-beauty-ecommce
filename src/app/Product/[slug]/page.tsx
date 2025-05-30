@@ -7,6 +7,7 @@ import { client } from '@/sanity/lib/client';
 import { FullProduct } from '@/interface';
 import { product } from '@/sanity/products';
 import { DocumentDefinition, PreviewConfig } from 'sanity';
+import AddToCartButton from '@/Components/Home/AddToCard';
 
 async function getData(slug: string) {
   const query = `*[_type == "product" && slug.current == "${slug}"][0] {
@@ -30,10 +31,6 @@ export default async function ProductPage({
   params: { slug: string };
 }) {
   const product: FullProduct = await getData(params.slug);
-
-  // function addToCart(product: { type: "document"; name: "product"; } & Omit<DocumentDefinition, "preview"> & { preview?: PreviewConfig<Record<string, string>, Record<never, any>> | undefined; }): void {
-  //   throw new Error('Function not implemented.');
-  // }
 
   return (
     <div className="bg-white m-10 py-10">
@@ -60,6 +57,17 @@ product.price}</span>
             </div>
 
             <div className="flex gap-2.5 mt-4">
+              <AddToCartButton product={
+                {
+                  id:product._id,
+                  title: product.title,
+                 slug: product.slug,
+                 description: product.description,
+                 imageUrl: product.imageUrl,
+                 price: product.price,
+                name: product.name
+                }
+              } />
               <div
                 // onClick={() => addToCart(product)}
                 className="flex gap-x-2 px-3 bg-black hover:bg-[#4e7460] cursor-pointer text-white p-3 rounded-full"

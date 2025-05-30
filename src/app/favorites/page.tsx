@@ -27,15 +27,15 @@ const FavoritesPage = () => {
               className="border rounded-lg overflow-hidden shadow-md p-4 flex flex-col"
             >
               <Image
-                src={product.thumbnail}
+                src={product.imageUrl}
                 alt={product.title}
                 width={250}
                 height={250}
                 className="w-full object-cover mx-auto"
               />
               <div className="mt-4">
-                <h2 className="text-lg font-medium">{product.title}</h2>
-                <p className="text-gray-600">${product.salePrice}</p>
+                <h2 className="text-lg font-medium">{product.name}</h2>
+                <p className="text-gray-600">${product.price}</p>
               </div>
               <button
                 onClick={() => removeFromFavorite(product.id)}

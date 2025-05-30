@@ -7,6 +7,7 @@ import { RiShoppingBag4Fill } from "react-icons/ri";
 import { SimplifiedProduct } from "@/interface";
 import { client } from "@/sanity/lib/client";
 import AddToCartButton from "./AddToCard";
+import AddToFavoriteButton from "./AddToFavorite";
 
 
 export const revalidate = 0;
@@ -46,12 +47,7 @@ const products: SimplifiedProduct[] = await getData();
         {products.map((product) => (
           <div key={product._id} className="bg-white rounded-md text-center space-y-3 relative group overflow-hidden cursor-pointer transition duration-300">
             <div className="absolute inset-0 flex items-center justify-center space-x-2 opacity-0 -translate-x-10 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0 z-10">
-              <div
-                // onClick={() => addToCart(product)}
-                className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow"
-              >
-                <RiShoppingBag4Fill size={23} />
-              </div>
+             
               <AddToCartButton product={
                 {
                   id:product._id,
@@ -63,12 +59,15 @@ const products: SimplifiedProduct[] = await getData();
                 name: product.name
                 }
               } />
-              <div
-                // onClick={() => addToFavorite(product)}
-                className="text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500 px-2 py-2 rounded-full shadow"
-              >
-                <FaRegHeart size={23} />
-              </div>
+            <AddToFavoriteButton product={{
+               id:product._id,
+                  title: product.title,
+                 slug: product.slug,
+                 description: product.description,
+                 imageUrl: product.imageUrl,
+                 price: product.price,
+                name: product.name
+            }} />
               
               <Link
                 href={`/product/${product.slug}`}
