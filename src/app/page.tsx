@@ -7,7 +7,6 @@ import ShopGlowing from "@/Components/Home/ShopGlowing";
 
 import { getCategories } from "@/sanity/lib/getCategories";
 
-
 export default async function Home() {
   const categories = await getCategories();
 
@@ -15,7 +14,7 @@ export default async function Home() {
     <div>
       <Hero />
       <CollectionCard categories={categories} />
-     
+
       <BestSeller />
       <NewCollection />
       <ShopGlowing />

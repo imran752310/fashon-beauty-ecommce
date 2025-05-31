@@ -3,7 +3,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRightLong, FaRegEye, FaRegHeart } from "react-icons/fa6";
-import { RiShoppingBag4Fill } from "react-icons/ri";
 import { SimplifiedProduct } from "@/interface";
 import { client } from "@/sanity/lib/client";
 import AddToCartButton from "./AddToCard";

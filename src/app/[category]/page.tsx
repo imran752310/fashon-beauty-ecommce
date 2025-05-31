@@ -2,7 +2,7 @@ import Link from "next/link";
 import { SimplifiedProduct } from "../../interface";
 import Image from "next/image";
 import { client } from "@/sanity/lib/client";
-import { FaArrowRightLong, FaRegEye } from "react-icons/fa6";
+import { FaRegEye } from "react-icons/fa6";
 import AddToCartButton from "@/Components/Home/AddToCard";
 import AddToFavoriteButton from "@/Components/Home/AddToFavorite";
 

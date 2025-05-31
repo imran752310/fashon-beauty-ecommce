@@ -7,7 +7,6 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { HiOutlineUser } from "react-icons/hi2";
 import {
-  IoStarOutline,
   IoBagHandleOutline,
   IoSearchOutline,
 } from "react-icons/io5";
