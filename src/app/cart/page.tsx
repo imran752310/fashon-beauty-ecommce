@@ -4,8 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const CartPage = () => {
-  const { cartItems, removeFromCart, clearCart, } = useCart();
-  
+  const { cartItems, removeFromCart, clearCart } = useCart();
 
   const totalPrice = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
@@ -46,21 +45,22 @@ const CartPage = () => {
                     </p>
                   </div>
                 </div>
-              <div className="">
-              
-                <button
-                  onClick={() => removeFromCart(item.id)}
-                  className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 cursor-pointer  "
-                >
-                  Remove
-                </button>
-              </div>
+                <div className="">
+                  <button
+                    onClick={() => removeFromCart(item.id)}
+                    className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 cursor-pointer  "
+                  >
+                    Remove
+                  </button>
+                </div>
               </div>
             ))}
           </div>
 
           <div className="mt-6 flex justify-between items-center">
-            <div className="text-lg font-semibold">Total: ${totalPrice.toFixed(2)}</div>
+            <div className="text-lg font-semibold">
+              Total: ${totalPrice.toFixed(2)}
+            </div>
             <button
               onClick={clearCart}
               className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition cursor-pointer"
@@ -69,12 +69,12 @@ const CartPage = () => {
             </button>
           </div>
           <div className="my-5">
-             <Link href={'/checkout'}
-                 
-                  className="bg-blue-500 text-white py-2 px-4 w-full rounded hover:bg-blue-600 cursor-pointer  "
-                >
-                  Checkout
-                </Link>
+            <Link
+              href={"/checkout"}
+              className="bg-blue-500 text-white py-2 px-4 w-full rounded hover:bg-blue-600 cursor-pointer  "
+            >
+              Checkout
+            </Link>
           </div>
         </>
       )}

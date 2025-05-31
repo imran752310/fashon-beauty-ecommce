@@ -1,13 +1,10 @@
-import React from 'react';
-import Image from 'next/image';
-import { FaShoppingCart, FaStar } from 'react-icons/fa';
-import { useCart } from '@/context/CartContext';
-import Link from 'next/link';
-import { client } from '@/sanity/lib/client';
-import { FullProduct } from '@/interface';
-import { product } from '@/sanity/products';
-import { DocumentDefinition, PreviewConfig } from 'sanity';
-import AddToCartButton from '@/Components/Home/AddToCard';
+import React from "react";
+import Image from "next/image";
+import { FaShoppingCart, FaStar } from "react-icons/fa";
+import Link from "next/link";
+import { client } from "@/sanity/lib/client";
+import { FullProduct } from "@/interface";
+import AddToCartButton from "@/Components/Home/AddToCard";
 
 async function getData(slug: string) {
   const query = `*[_type == "product" && slug.current == "${slug}"][0] {
@@ -24,7 +21,6 @@ async function getData(slug: string) {
   return product;
 }
 
-
 export default async function ProductPage({
   params,
 }: {
@@ -36,9 +32,16 @@ export default async function ProductPage({
     <div className="bg-white m-10 py-10">
       <div className="mx-auto max-w-screen-xl px-4 md:px-8">
         <div className="grid gap-8 md:grid-cols-2">
-          <Image src={product.imageUrl} alt={product.name}  width={400} height={400} />
+          <Image
+            src={product.imageUrl}
+            alt={product.name}
+            width={400}
+            height={400}
+          />
           <div className="md:py-8">
-            <h2 className="text-2xl font-bold text-gray-800">{product.title}</h2>
+            <h2 className="text-2xl font-bold text-gray-800">
+              {product.title}
+            </h2>
             <div className="mb-6 flex items-center gap-3">
               <div className="flex gap-x-2 px-3 bg-[#4e7460] text-white p-3 rounded-full">
                 <span>4.2</span>
@@ -49,39 +52,44 @@ export default async function ProductPage({
 
             <div className="mb-4">
               <div className="flex items-end gap-2">
-                <span className="text-xl font-bold text-gray-800">${product.price}</span>
-                <span className="mb-0.5 text-red-500 line-through">${
-product.price}</span>
+                <span className="text-xl font-bold text-gray-800">
+                  ${product.price}
+                </span>
+                <span className="mb-0.5 text-red-500 line-through">
+                  ${product.price}
+                </span>
               </div>
-              <span className="text-sm text-gray-500">Incl. VAT + Shipping</span>
+              <span className="text-sm text-gray-500">
+                Incl. VAT + Shipping
+              </span>
             </div>
 
             <div className="flex gap-2.5 mt-4">
-              <AddToCartButton product={
-                {
-                  id:product._id,
+              <AddToCartButton
+                product={{
+                  id: product._id,
                   title: product.title,
-                 slug: product.slug,
-                 description: product.description,
-                 imageUrl: product.imageUrl,
-                 price: product.price,
-                name: product.name
-                }
-              } />
-              <div
-                // onClick={() => addToCart(product)}
-                className="flex gap-x-2 px-3 bg-black hover:bg-[#4e7460] cursor-pointer text-white p-3 rounded-full"
+                  slug: product.slug,
+                  description: product.description,
+                  imageUrl: product.imageUrl,
+                  price: product.price,
+                  name: product.name,
+                }}
+              />
+              
+              <Link
+                href={"/checkout/"}
+                className="flex gap-x-2 px-3 border hover:bg-[#4e7460] hover:text-white p-3 rounded-full"
               >
-                <span>Add To Cart</span>
-                <FaShoppingCart className="w-5 h-5" />
-              </div>
-              <Link href={'/checkout/'} className="flex gap-x-2 px-3 border hover:bg-[#4e7460] hover:text-white p-3 rounded-full">
                 <span>Checkout</span>
               </Link>
             </div>
 
             <p className="mt-12 text-base text-gray-500">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, saepe sit delectus cupiditate beatae consequatur at ratione deleniti eveniet ex a? Natus modi aliquam pariatur amet repellat nihil neque? Quo.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
+              saepe sit delectus cupiditate beatae consequatur at ratione
+              deleniti eveniet ex  Natus modi aliquam pariatur amet repellat
+              nihil neque? Quo.
             </p>
           </div>
         </div>

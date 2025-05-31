@@ -42,18 +42,18 @@ const CheckoutPage = () => {
             <div key={product.id} className="flex justify-between gap-5 mb-4">
               <div className="flex items-center gap-2">
                 <Image
-                              src={product.imageUrl}
-                              alt={product.title}
-                              width={50}
-                              height={50}
-                              className="object-cover mx-auto"
-                            />
-              <div>
-                <p>{product.name}</p>
-                <p className="text-sm text-gray-500">${product.price}</p>
+                  src={product.imageUrl}
+                  alt={product.title}
+                  width={50}
+                  height={50}
+                  className="object-cover mx-auto"
+                />
+                <div>
+                  <p>{product.name}</p>
+                  <p className="text-sm text-gray-500">${product.price}</p>
+                </div>
               </div>
-              </div>
-               
+
               <button
                 onClick={() => removeFromCart(product.id)}
                 className="text-red-500"
