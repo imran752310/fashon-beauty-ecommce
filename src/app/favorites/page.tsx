@@ -13,7 +13,7 @@ const FavoritesPage = () => {
 
       {favoriteItems.length === 0 ? (
         <div className="text-center text-gray-500">
-          You haven't added any favorites yet.
+          You have not added any favorites yet.
           <br />
           <Link href="/" className="text-blue-600 underline mt-4 inline-block">
             Go to Shop

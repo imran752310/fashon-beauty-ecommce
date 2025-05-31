@@ -6,15 +6,10 @@ import { NewCollection } from "@/Components/Home/NewCollection";
 import ShopGlowing from "@/Components/Home/ShopGlowing";
 
 import { getCategories } from "@/sanity/lib/getCategories";
-import { getProducts } from "@/sanity/lib/getProducts";
 
 
 export default async function Home() {
-
- 
   const categories = await getCategories();
-
-  const products = await getProducts();
 
   return (
     <div>
