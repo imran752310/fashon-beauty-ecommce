@@ -1,9 +1,10 @@
+import Link from "next/link";
 import React from "react";
 
 const Hero = () => {
   return (
     
-   <div className="mx-5" data-aos="fade-up"
+   <div className="mx-5 " data-aos="fade-up"
    data-aos-anchor-placement="top-center">
     
      <div className="bg-[url('/images/hero-banner-1.jpg')] bg-cover bg-center w-full h-[550px] md:h-[600px] lg:h-[600px]">
@@ -19,9 +20,9 @@ const Hero = () => {
           Starting at $7.99
         </span>
         <div className="py-4">
-          <button className="w-36 sm:w-40 cursor-pointer p-2 sm:p-3 bg-black hover:bg-[#4e7460] text-white rounded font-semibold text-sm sm:text-md">
+          <Link href={"/shop"} className="w-36 sm:w-40 cursor-pointer p-2 sm:p-3 bg-black hover:bg-[#4e7460] text-white rounded font-semibold text-sm sm:text-md">
             Shop Now
-          </button>
+          </Link>
         </div>
       </div>
     </div>

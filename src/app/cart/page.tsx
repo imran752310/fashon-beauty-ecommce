@@ -11,6 +11,7 @@ const CartPage = () => {
     0
   );
 
+  
   return (
     <div className="p-6 max-w-5xl mx-auto">
       <h1 className="text-2xl font-semibold mb-6">Your Shopping Cart</h1>
@@ -48,6 +49,7 @@ const CartPage = () => {
                 <div className="">
                   <button
                     onClick={() => removeFromCart(item.id)}
+                    
                     className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 cursor-pointer  "
                   >
                     Remove

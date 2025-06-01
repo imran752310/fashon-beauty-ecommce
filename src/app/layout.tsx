@@ -66,7 +66,7 @@ export default function RootLayout({
       >   <CartProvider>
           <FavoriteProvider>
         <Navbar />
-        <Toaster position="top-right" />
+       <Toaster position="top-center" reverseOrder={false} /> {/* ✅ Add this line */}
       {children}
       </FavoriteProvider>
         <Footer />

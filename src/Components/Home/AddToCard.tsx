@@ -4,6 +4,7 @@ import React from "react";
 import { useCart } from "@/context/CartContext"; // adjust path as needed
 import { Product } from "@/context/CartContext"; // same here
 import { RiShoppingBag4Fill } from "react-icons/ri";
+import toast from "react-hot-toast";
 
 interface AddToCartButtonProps {
   product: Product;
@@ -14,6 +15,7 @@ const AddToCartButton: React.FC<AddToCartButtonProps> = ({ product }) => {
 
   const handleClick = () => {
     addToCart(product);
+    toast.success(`Product added to cart!`)
   };
 
   return (

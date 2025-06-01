@@ -4,6 +4,7 @@ import React from "react";
 import { useFavorite } from "@/context/FavoriteContext"; // adjust the path
 import { Product } from "@/context/FavoriteContext"; // adjust the path
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai"; // Heart icons
+import toast from "react-hot-toast";
 
 interface AddToFavoriteButtonProps {
   product: Product;
@@ -16,6 +17,7 @@ const AddToFavoriteButton: React.FC<AddToFavoriteButtonProps> = ({ product }) =>
 
   const handleClick = () => {
     isFavorited ? removeFromFavorite(product.id) : addToFavorite(product);
+    toast.success(`Product added to Favorite!`)
   };
 
   return (

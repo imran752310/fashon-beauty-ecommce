@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaArrowRightLong, FaRegEye, FaRegHeart } from "react-icons/fa6";
+import { FaArrowRightLong, FaRegEye } from "react-icons/fa6";
 import { SimplifiedProduct } from "@/interface";
 import { client } from "@/sanity/lib/client";
 import AddToCartButton from "./AddToCard";

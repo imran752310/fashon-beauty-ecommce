@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { FaShoppingCart, FaStar } from "react-icons/fa";
+import {  FaStar } from "react-icons/fa";
 import Link from "next/link";
 import { client } from "@/sanity/lib/client";
 import { FullProduct } from "@/interface";
