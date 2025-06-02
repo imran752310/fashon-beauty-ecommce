@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
+import { delay, motion } from "framer-motion";
 
 interface Category {
   _id: string;
@@ -14,16 +15,35 @@ interface Props {
   categories: Category[];
 }
 
+const cardVariants = {
+  offscreen: {
+    y: 50,
+    opacity: 0,
+  },
+  onscreen: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      duration: 0.30,
+      ease: "easeOut",
+    },
+  },
+};
+
 export default function CollectionCard({ categories }: Props) {
   return (
-    <div
-      className="px-5 py-15"
-      data-aos="fade-up"
-      data-aos-anchor-placement="top-center"
-    >
+    <div className="mt-10 px-5 py-15">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-        {categories.map((cat) => (
-          <div key={cat._id} className="overflow-hidden">
+        {categories.map((cat,index) => (
+          <motion.div
+            key={cat._id}
+            className="overflow-hidden"
+           initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.5 }}
+            viewport={{ once: true }}
+          >
             <div
               className="relative w-full h-[430px] bg-cover bg-center transition-transform duration-300 hover:scale-105"
               style={{ backgroundImage: `url("${cat.imageUrl}")` }}
@@ -34,14 +54,14 @@ export default function CollectionCard({ categories }: Props) {
                   <h2 className="text-3xl font-bold mb-4">{cat.name}</h2>
                   <p className="text-lg mb-8">{cat.text}</p>
                 </div>
-                <Link href={`/${cat.name}`}>
+                <Link href={`category/${cat.name}`}>
                   <span className="text-base font-semibold hover:opacity-75 cursor-pointer">
                     Discover Now →
                   </span>
                 </Link>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
