@@ -5,8 +5,7 @@ import Footer from "@/Components/global/Footer";
 import { CartProvider } from "@/context/CartContext";
 import { FavoriteProvider } from "@/context/FavoriteContext";
 import { Toaster } from "react-hot-toast";
-
-
+import MotionWrapper from "@/Components/MotionWrapper";
 
 export const metadata: Metadata = {
   title: "Glowing Beauty – Skincare, Wellness & Self-Care Tips",
@@ -61,15 +60,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        cz-shortcut-listen="true"
-      >   <CartProvider>
+      <body cz-shortcut-listen="true">
+        {" "}
+        <CartProvider>
           <FavoriteProvider>
-        <Navbar />
-       <Toaster position="top-center" reverseOrder={false} /> {/* ✅ Add this line */}
-      {children}
-      </FavoriteProvider>
-        <Footer />
+            <Navbar />
+            <Toaster position="top-center" reverseOrder={false} />{" "}
+            {/* ✅ Add this line */}
+            <MotionWrapper>{children}</MotionWrapper>
+          </FavoriteProvider>
+          <Footer />
         </CartProvider>
       </body>
     </html>

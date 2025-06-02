@@ -43,7 +43,7 @@ const CheckoutPage = () => {
               <div className="flex items-center gap-2">
                 <Image
                   src={product.imageUrl}
-                  alt={product.title}
+                  alt={product.name}
                   width={50}
                   height={50}
                   className="object-cover mx-auto"
