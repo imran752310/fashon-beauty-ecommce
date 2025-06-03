@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
-import { delay, motion } from "framer-motion";
+import {motion } from "framer-motion";
 
 interface Category {
   _id: string;
@@ -15,21 +15,21 @@ interface Props {
   categories: Category[];
 }
 
-const cardVariants = {
-  offscreen: {
-    y: 50,
-    opacity: 0,
-  },
-  onscreen: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      duration: 0.30,
-      ease: "easeOut",
-    },
-  },
-};
+// const cardVariants = {
+//   offscreen: {
+//     y: 50,
+//     opacity: 0,
+//   },
+//   onscreen: {
+//     y: 0,
+//     opacity: 1,
+//     transition: {
+//       type: "spring",
+//       duration: 0.30,
+//       ease: "easeOut",
+//     },
+//   },
+// };
 
 export default function CollectionCard({ categories }: Props) {
   return (

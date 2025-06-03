@@ -24,9 +24,9 @@ async function getData(slug: string) {
 export default async function ProductPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise <{ slug: string }>;
 }) {
-  const product: FullProduct = await getData(params.slug);
+  const product: FullProduct = await getData((await params).slug);
 
   return (
     <div className="bg-white m-10 py-10">
